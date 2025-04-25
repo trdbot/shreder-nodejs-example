@@ -1,0 +1,19 @@
+{
+  "name": "grpc-client-example",
+  "version": "1.0.0",
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "tsc -p .",
+    "start": "npm run build && node dist/index.js"
+  },
+  "author": "Shreder XYZ",
+  "license": "MIT",
+  "description": "Shreder Node.js client example",
+  "dependencies": {
+    "@shreder_xyz/grpc-client": "^0.0.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.1",
+    "typescript": "^5.8.3"
+  }
+}
