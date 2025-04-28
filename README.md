@@ -43,5 +43,5 @@ Before you begin, make sure you have the following installed:
    ```
 
 Shreder website: https://shreder.xyz/
-Discord: https://discord.gg/5FPgveHn
+Discord: https://discord.gg/8qEGZKPVDV
 X: https://x.com/ShrederXyz
