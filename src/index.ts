@@ -1,9 +1,10 @@
 import Client, {
   type SubscribeTransactionsRequest,
 } from "@shreder_xyz/grpc-client";
+import { utils } from "@project-serum/anchor";
 
 async function main() {
-  const client = new Client("http://localhost:9991", {});
+  const client = new Client("http://fra1.shreder.xyz:9991", {});
   const stream = await client.subscribe();
 
   const streamClosed = new Promise<void>((resolve, reject) => {
@@ -20,7 +21,15 @@ async function main() {
   });
 
   stream.on("data", (data) => {
-    console.log(data);
+    const signatures = data.transaction.transaction.signatures.map((s: Buffer) =>
+      utils.bytes.bs58.encode(s),
+    );
+    console.log(
+      new Date().toISOString(),
+      data,
+      signatures
+    );
+
   });
 
   const request: SubscribeTransactionsRequest = {
